@@ -1,0 +1,8 @@
+{
+    "cmake.environment": {
+        "PICO_SDK_PATH":"/Users/remon/pico/pico-sdk",
+        "PICO_EXTRAS_PATH":"/Users/remon/pico/pico-extras"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.errorSquiggles": "Disabled"
+}

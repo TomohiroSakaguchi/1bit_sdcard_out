@@ -1,0 +1,3 @@
+/Users/remon/pico/1bit_sdcard_out/build/pioasm/CMakeFiles/pioasm.dir
+/Users/remon/pico/1bit_sdcard_out/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/remon/pico/1bit_sdcard_out/build/pioasm/CMakeFiles/rebuild_cache.dir
