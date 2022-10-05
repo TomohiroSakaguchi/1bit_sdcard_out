@@ -1754,9 +1754,9 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0xb0 CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj
  .ARM.attributes
                 0x0000000000000000       0x2c CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj
- .text          0x0000000000000000        0x0 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccBPWvCF.o
- .data          0x0000000000000000        0x0 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccBPWvCF.o
- .bss           0x0000000000000000        0x0 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccBPWvCF.o
+ .text          0x0000000000000000        0x0 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccKOG82Z.o
+ .data          0x0000000000000000        0x0 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccKOG82Z.o
+ .bss           0x0000000000000000        0x0 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccKOG82Z.o
  .data          0x0000000000000000        0x0 /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x0000000000000000        0x0 /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000        0x0 /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-calloc.o)
@@ -2283,7 +2283,7 @@ LOAD /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-non
 .boot2          0x0000000010000000      0x100
                 0x0000000010000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x0000000010000000      0x100 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccBPWvCF.o
+ .boot2         0x0000000010000000      0x100 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccKOG82Z.o
                 0x0000000010000100                __boot2_end__ = .
                 0x0000000000000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -4529,7 +4529,7 @@ LOAD CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware
 LOAD CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj
 LOAD CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
 LOAD CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj
-LOAD /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccBPWvCF.o
+LOAD /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccKOG82Z.o
 LOAD /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -4682,7 +4682,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000ac0       0x2c CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .ARM.attributes
-                0x0000000000000aec       0x22 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccBPWvCF.o
+                0x0000000000000aec       0x22 /var/folders/fn/19zcb_c91hl1y7zlsvwz10000000gn/T//ccKOG82Z.o
  .ARM.attributes
                 0x0000000000000b0e       0x1e /usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

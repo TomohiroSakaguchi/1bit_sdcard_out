@@ -1,1 +1,0 @@
-# 1bit_sdcard_out
