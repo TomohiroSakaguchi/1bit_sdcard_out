@@ -91,4 +91,11 @@ CMakeFiles/sd_fat_spi.dir/main.c.obj: \
  /Users/remon/pico/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
- /Users/remon/pico/1bit_sdcard_out/output.h
+ /Users/remon/pico/1bit_sdcard_out/output.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pll/include/hardware/pll.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pll.h

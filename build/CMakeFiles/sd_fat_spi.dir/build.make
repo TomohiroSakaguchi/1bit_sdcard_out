@@ -1304,10 +1304,24 @@ CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicor
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c -o CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
 
+CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj: CMakeFiles/sd_fat_spi.dir/flags.make
+CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj: /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c
+CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj: CMakeFiles/sd_fat_spi.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/remon/pico/1bit_sdcard_out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj -MF CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj.d -o CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj -c /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c
+
+CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c > CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+
+CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c -o CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+
 CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj: CMakeFiles/sd_fat_spi.dir/flags.make
 CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj: /Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c
 CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj: CMakeFiles/sd_fat_spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/remon/pico/1bit_sdcard_out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/remon/pico/1bit_sdcard_out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj -MF CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj.d -o CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj -c /Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c
 
 CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.i: cmake_force
@@ -1409,6 +1423,7 @@ sd_fat_spi_OBJECTS = \
 "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj" \
 "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj" \
 "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj" \
+"CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj" \
 "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj"
 
 # External object files for target sd_fat_spi
@@ -1503,11 +1518,12 @@ sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_comm
 sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
 sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj
 sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj
 sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/build.make
 sd_fat_spi.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 sd_fat_spi.elf: CMakeFiles/sd_fat_spi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/remon/pico/1bit_sdcard_out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Linking CXX executable sd_fat_spi.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/remon/pico/1bit_sdcard_out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Linking CXX executable sd_fat_spi.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sd_fat_spi.dir/link.txt --verbose=$(VERBOSE)
 	/usr/local/bin/arm-none-eabi-objcopy -Oihex /Users/remon/pico/1bit_sdcard_out/build/sd_fat_spi.elf sd_fat_spi.hex
 	/usr/local/bin/arm-none-eabi-objcopy -Obinary /Users/remon/pico/1bit_sdcard_out/build/sd_fat_spi.elf sd_fat_spi.bin

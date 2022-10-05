@@ -30,6 +30,7 @@ target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     FatFs_SPI
     pico_multicore
+    hardware_pio
     hardware_interp
 )
 

@@ -123,6 +123,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_dma/include"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/include"
   "/Users/remon/pico/pico-sdk/src/rp2_common/pico_multicore/include"
+  "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/include"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/include"
   )
 
@@ -162,6 +163,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj.d"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_interp/interp.c.obj.d"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj.d"
+  "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj.d"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj.d"
   "/Users/remon/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj" "gcc" "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj.d"
