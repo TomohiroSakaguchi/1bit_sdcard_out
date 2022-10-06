@@ -1,4 +1,5 @@
 /Users/remon/pico/1bit_sdcard_out/build/CMakeFiles/sd_fat_spi.dir
+/Users/remon/pico/1bit_sdcard_out/build/CMakeFiles/sd_fat_spi_output_pio_h.dir
 /Users/remon/pico/1bit_sdcard_out/build/CMakeFiles/ELF2UF2Build.dir
 /Users/remon/pico/1bit_sdcard_out/build/CMakeFiles/edit_cache.dir
 /Users/remon/pico/1bit_sdcard_out/build/CMakeFiles/rebuild_cache.dir

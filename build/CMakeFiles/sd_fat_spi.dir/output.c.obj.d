@@ -67,4 +67,22 @@ CMakeFiles/sd_fat_spi.dir/output.c.obj: \
  /Users/remon/pico/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
- /Users/remon/pico/1bit_sdcard_out/main.h
+ /Users/remon/pico/1bit_sdcard_out/main.h \
+ /Users/remon/pico/1bit_sdcard_out/build/output.pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
+ /Users/remon/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
+ /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
+ /Users/remon/pico/1bit_sdcard_out/pins.h

@@ -14,17 +14,19 @@
 			"target_link_libraries",
 			"pico_define_boot_stage2",
 			"add_dependencies",
+			"pico_generate_pio_header",
 			"find_package",
 			"pico_add_uf2_output",
 			"pico_add_extra_outputs",
-			"target_compile_definitions"
+			"target_compile_definitions",
+			"target_include_directories"
 		],
 		"files" : 
 		[
 			"CMakeLists.txt",
 			"/Users/remon/pico/pico-sdk/src/rp2_common/boot_stage2/CMakeLists.txt",
-			"/Users/remon/pico/pico-sdk/tools/FindELF2UF2.cmake",
 			"/Users/remon/pico/pico-sdk/tools/CMakeLists.txt",
+			"/Users/remon/pico/pico-sdk/tools/FindELF2UF2.cmake",
 			"/Users/remon/pico/pico-sdk/src/rp2_common.cmake"
 		],
 		"nodes" : 
@@ -41,7 +43,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 29,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
@@ -60,32 +62,44 @@
 				"parent" : 4
 			},
 			{
-				"command" : 6,
-				"file" : 0,
-				"line" : 26,
-				"parent" : 0
-			},
-			{
-				"command" : 5,
-				"file" : 4,
-				"line" : 45,
-				"parent" : 6
-			},
-			{
 				"command" : 4,
-				"file" : 3,
-				"line" : 49,
-				"parent" : 7
-			},
-			{
-				"file" : 2,
-				"parent" : 8
+				"file" : 0,
+				"line" : 25,
+				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 2,
-				"line" : 41,
+				"line" : 37,
+				"parent" : 6
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 49,
 				"parent" : 9
+			},
+			{
+				"file" : 3,
+				"parent" : 10
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 41,
+				"parent" : 11
 			},
 			{
 				"command" : 3,
@@ -94,9 +108,15 @@
 				"parent" : 4
 			},
 			{
-				"command" : 7,
+				"command" : 8,
 				"file" : 4,
 				"line" : 28,
+				"parent" : 8
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 42,
 				"parent" : 6
 			}
 		]
@@ -292,7 +312,7 @@
 					"define" : "PICO_ON_DEVICE=1"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 14,
 					"define" : "PICO_TARGET_NAME=\"sd_fat_spi\""
 				},
 				{
@@ -302,6 +322,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 15,
+					"path" : "/Users/remon/pico/1bit_sdcard_out/build"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "/Users/remon/pico/pico-sdk/src/common/pico_stdlib/include"
@@ -793,7 +817,7 @@
 					"define" : "PICO_ON_DEVICE=1"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 14,
 					"define" : "PICO_TARGET_NAME=\"sd_fat_spi\""
 				},
 				{
@@ -803,6 +827,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 15,
+					"path" : "/Users/remon/pico/1bit_sdcard_out/build"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "/Users/remon/pico/pico-sdk/src/common/pico_stdlib/include"
@@ -1237,7 +1265,7 @@
 					"define" : "PICO_ON_DEVICE=1"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 14,
 					"define" : "PICO_TARGET_NAME=\"sd_fat_spi\""
 				},
 				{
@@ -1247,6 +1275,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 15,
+					"path" : "/Users/remon/pico/1bit_sdcard_out/build"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "/Users/remon/pico/pico-sdk/src/common/pico_stdlib/include"
@@ -1478,11 +1510,15 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 10,
+			"backtrace" : 7,
+			"id" : "sd_fat_spi_output_pio_h::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 12,
 			"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 11,
+			"backtrace" : 13,
 			"id" : "bs2_default_padded_checksummed_asm::@bc554eaed616d198a22d"
 		}
 	],

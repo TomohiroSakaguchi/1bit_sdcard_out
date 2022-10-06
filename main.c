@@ -9,9 +9,8 @@
 #include "hardware/pio.h"
 #include "hardware/sync.h"
 #include "hardware/pll.h"
-//#include "pdm_output.h"
-//#include "pdm_output.pio.h"
-//#include "pins.h"
+#include "output.pio.h"
+#include "pins.h"
 
 static semaphore_t buffout_initted;
 
