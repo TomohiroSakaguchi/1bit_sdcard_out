@@ -6,9 +6,9 @@
 #include "sd_card.h"
 #include "ff.h"
 #include "output.h"
-#include "hardware/pio.h"
-#include "hardware/sync.h"
-#include "hardware/pll.h"
+//#include "hardware/pio.h"
+//#include "hardware/sync.h"
+//#include "hardware/pll.h"
 #include "output.pio.h"
 #include "pins.h"
 
@@ -133,7 +133,7 @@ int main(){
 //  set_sys_clock_khz(140000, true);    //  NG  -   Core1 overflow
 //  set_sys_clock_khz(144000, true);    //  OK  NG  144.0M/48k/64 = 46.875 -> Low S/N
 //  set_sys_clock_khz(150000, true);    //  OK  NG  150.0M/48k/64 = 48.828 -> Low S/N  
-    set_sys_clock_khz(153600, true);    //  OK  OK  153.6M/48k/64 = 50.000, 153.6M/133M = x1.15 Overclock
+//    set_sys_clock_khz(153600, true);    //  OK  OK  153.6M/48k/64 = 50.000, 153.6M/133M = x1.15 Overclock
 //  set_sys_clock_khz(230400, true);    //  OK  OK  230.4M/48k/64 = 75.000, 230.4M/133M = x1.73 Overclock
     //stdio_uart_init();
     // Initialize chosen serial port

@@ -18,6 +18,7 @@
 #define FIR_T_MAX       15              // FIRフィルタ構造体用最大タップ数定義
 
 // Test DipSW Init. & DipSW Reader
+/*
 uint32_t get_dip(void){
     static bool first = 1;
     if (first){
@@ -69,9 +70,10 @@ void set_gpio_pad_slewfast(uint32_t gpio_num, uint32_t set_data){
     data &= ~PADS_BANK0_GPIO0_SLEWFAST_BITS; // Target bit clear
     data |= set_data << PADS_BANK0_GPIO0_SLEWFAST_LSB;
     *adr = data;
-}
+}*/
 
 void output(){
+    /*
     uint offset = pio_add_program(pio0, &pio_pdm_output_program);
     pio_pdm_output_program_init(pio0, 0, offset, OFS, PIN_OUTPUT_LP);   // Init. Left Ch. pio，pdm_output.pioで定義
     pio_pdm_output_program_init(pio0, 1, offset, OFS, PIN_OUTPUT_RP);   // Init. Right Ch. pio，pdm_output.pioで定義
@@ -84,7 +86,7 @@ void output(){
         set_gpio_pad_pue(i, 0);         // PullUpEnable   0:Disable,1:Enable
         set_gpio_pad_pde(i, 0);         // PullDownEnable 0:Disable,1:Enable
         set_gpio_pad_slewfast(i, 1);    // SlewFast       0:Disable,1:Enable
-    }
+    }*/
 
 	static bool mute_flag = false;
     static uint32_t mute_buff[768] = {0};  // 無音buff 3072/4でよさそう？
@@ -125,8 +127,8 @@ void output(){
         	printf("bs_No.%d = %d\n",(i/32),bs);
 //            gpio_put(PIN_PIOT_MEASURE, 1);              // テスト用 pio設定前にH。pioに待たされている時刻測定用
 
-            pio_sm_put_blocking(pio0, 0, bs);  //　set L-Ch 31:00 data to pio0,sm0(LSB First)
-            pio_sm_put_blocking(pio0, 1, bs);  //　set R-Ch 31:00 data to pio0,sm1(LSB First) 
+            //pio_sm_put_blocking(pio0, 0, bs);  //　set L-Ch 31:00 data to pio0,sm0(LSB First)
+            //pio_sm_put_blocking(pio0, 1, bs);  //　set R-Ch 31:00 data to pio0,sm1(LSB First) 
             //pio_sm_put_blocking(pio0, 0, ch[0].bs[1]);  //　set L-Ch 63:32 data to pio0,sm0
             //pio_sm_put_blocking(pio0, 1, ch[1].bs[1]);  //　set R-Ch 63:32 data to pio0,sm1
 
