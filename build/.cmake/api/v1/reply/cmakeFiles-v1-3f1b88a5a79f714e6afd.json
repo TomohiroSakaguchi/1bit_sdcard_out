@@ -1107,6 +1107,15 @@
 		},
 		{
 			"isExternal" : true,
+			"path" : "/Users/remon/pico/pico-sdk/tools/FindPioasm.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/local/Cellar/cmake/3.24.1/share/cmake/Modules/ExternalProject.cmake"
+		},
+		{
+			"isExternal" : true,
 			"path" : "/Users/remon/pico/pico-sdk/tools/FindELF2UF2.cmake"
 		},
 		{

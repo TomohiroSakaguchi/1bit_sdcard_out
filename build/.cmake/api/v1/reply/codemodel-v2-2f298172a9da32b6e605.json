@@ -21,7 +21,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						7
+						7,
+						8
 					]
 				},
 				{
@@ -958,7 +959,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						7
+						7,
+						8
 					]
 				},
 				{
@@ -1056,7 +1058,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELF2UF2Build-Debug-2fa56b025fa9b318f647.json",
+					"jsonFile" : "target-ELF2UF2Build-Debug-068b63d170d85e074dfa.json",
 					"name" : "ELF2UF2Build",
 					"projectIndex" : 0
 				},
@@ -1105,8 +1107,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sd_fat_spi::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sd_fat_spi-Debug-d9563da900785a90f4fa.json",
+					"jsonFile" : "target-sd_fat_spi-Debug-f0af9069be8305646121.json",
 					"name" : "sd_fat_spi",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sd_fat_spi_output_pio_h::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sd_fat_spi_output_pio_h-Debug-4a5e6bd664ab07a62484.json",
+					"name" : "sd_fat_spi_output_pio_h",
 					"projectIndex" : 0
 				}
 			]

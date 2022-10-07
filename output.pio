@@ -1,0 +1,52 @@
+;
+; PICO 1bit DACのPDM出力用PIOアセンブリファイル
+;
+
+.program pio_pdm_output
+
+public start_output:
+    set y,  0b1001          ;y   = 0x00000009 : seed of silent data '1001'
+    set x,  0b0110          ;x   = 0x00000006 : seed of silent data '0110'
+    in  y,   4              ;isr = 0x.......9
+    in  x,   4              ;isr = 0x......96
+    in  isr, 8              ;isr = 0x....9696
+    in  isr,16              ;isr = 0x96969696 
+check_osre:                 ;T-slot
+    nop [2]                 ; 1 ~ 3 ; Adjustment for 10 clock cycles
+    jmp !OSRE data_exist    ; 4
+    mov osr,isr             ; 5     ; osr = silent data
+    jmp data_not_exist      ; 6
+data_exist:
+    nop [1]                 ; 5 ~ 6 ; Adjustment for !OSRE cycle 
+data_not_exist:
+    out y, 1                ; 7
+    jmp !y send_01          ; 8
+send_10:
+    set pins, 0b10          ; 9     ; GP14,15/GP16,17=L,H
+    jmp check_osre          ;10
+send_01:
+    set pins, 0b01          ; 9     ; GP14,15/GP16,17=H,L
+    jmp check_osre          ;10
+
+% c-sdk {
+#include "hardware/clocks.h"
+static inline void pio_pdm_output_program_init(PIO pio, uint sm, uint offset, uint baud, uint pin_p)
+{
+    pio_gpio_init(pio, pin_p);                              // GPIOn   for positive pin
+    pio_gpio_init(pio, pin_p + 1);                          // GPIOn+1 for negative pin
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_p, 2, true);// pin_base = pin_p, pin_count = 2, output 
+
+    pio_sm_config c = pio_pdm_output_program_get_default_config(offset);
+//  sm_config_set_out_pins(&c, pin_p, 2);                   // for 'out' pins command, NOT USED in pio_pdm_output program.
+    sm_config_set_set_pins(&c, pin_p, 2);                   // for 'set' pins command.
+    sm_config_set_out_shift(&c, true, true, 32);            // osr : shift right, autopull, threshold = 32 
+    sm_config_set_in_shift(&c, false, false, 32);           // isr : shift left, no autopush, threshold = 32
+    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);          // Deeper FIFO as we're not doing any RX
+
+    float div = (float)clock_get_hz(clk_sys) / (10 * baud); // We transmit 1 bit every 10 execution cycles
+    sm_config_set_clkdiv(&c, div);
+
+    pio_sm_init(pio, sm, offset, &c);
+//  pio_sm_set_enabled(pio, sm, true);                      // Move to higher-level program for L/R start phase-alignment.
+}
+%}

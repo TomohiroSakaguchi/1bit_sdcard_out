@@ -69,6 +69,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
   "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj.d"
   "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
+  "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
+  "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj.d"
   "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
   "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d"
   "CMakeFiles/sd_fat_spi.dir/Users/remon/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj"
