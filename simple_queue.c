@@ -34,7 +34,7 @@ void queue_init(void)
 /**
  * バッファからサンプルを引き取る
  */
-bool dequeue(uint32_t** buff, uint* cnt)
+bool dequeue(uint32_t** buff, uint32_t* cnt)
 {
     bool ret = false;
     if (get_length())
@@ -55,7 +55,7 @@ bool dequeue(uint32_t** buff, uint* cnt)
 /**
  * バッファへ値を積む
  */
-bool enqueue(uint32_t* buff, uint cnt)
+bool enqueue(uint32_t* buff, uint32_t cnt)
 {
     bool ret = false;
     if (get_length() < QUEUE_SIZE){
@@ -83,5 +83,6 @@ uint32_t get_length(void)
     uint32_t save = spin_lock_blocking(queue_spin_lock);
     ret = data_size;
     spin_unlock(queue_spin_lock, save);
+    printf("data_size = %d\n",ret);
     return ret;
 }

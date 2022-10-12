@@ -26,7 +26,7 @@ void file_read() {
     int ret;
     char buf[100];
     char *ptr;
-    char filename[] = "check_500Hz_3072000Fs.dat";
+    char filename[] = "check_500Hz_3072000Fs_10s.dat";
 
     // Wait for user to press 'enter' to continue
     printf("\r\nSD card test. Press 'enter' to start.\r\n");
@@ -97,7 +97,8 @@ void file_read() {
     printf("Reading from file '%s':\r\n", filename);
     printf("---\r\n");
     while (f_gets(buf, sizeof(buf), &fil)) {
-        uint32_t data[sizeof(buf)];
+        //uint32_t data[sizeof(buf)];
+        uint32_t *data;
         for(uint32_t i=0;i<sizeof(buf);i++){
             data[i] = parseint(buf[i]);
             //printf("%d",data[i]);
@@ -133,8 +134,8 @@ int main(){
 //  set_sys_clock_khz(140000, true);    //  NG  -   Core1 overflow
 //  set_sys_clock_khz(144000, true);    //  OK  NG  144.0M/48k/64 = 46.875 -> Low S/N
 //  set_sys_clock_khz(150000, true);    //  OK  NG  150.0M/48k/64 = 48.828 -> Low S/N  
-//    set_sys_clock_khz(153600, true);    //  OK  OK  153.6M/48k/64 = 50.000, 153.6M/133M = x1.15 Overclock
-//  set_sys_clock_khz(230400, true);    //  OK  OK  230.4M/48k/64 = 75.000, 230.4M/133M = x1.73 Overclock
+//    set_sys_clock_khz(153600, true);    //  NG    153.6M/48k/64 = 50.000, 153.6M/133M = x1.15 Overclock ->手持ちのPicoではUSBデバイスと新式されず．．
+    set_sys_clock_khz(230400, true);    //  OK  OK  230.4M/48k/64 = 75.000, 230.4M/133M = x1.73 Overclock
     //stdio_uart_init();
     // Initialize chosen serial port
     stdio_init_all();
