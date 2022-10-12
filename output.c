@@ -89,7 +89,7 @@ void output(){
 
 	static bool mute_flag = false;
     static uint32_t mute_buff[768] = {0};  // 無音buff 3072/4でよさそう？
-    uint count;
+    uint32_t count;
     uint32_t* buff; //buffのポインタを宣言するのでbuffそのものを呼び出しているわけではない
     
     while(1){
@@ -111,18 +111,18 @@ void output(){
         {
             //printf("flag is mute due to fail dequeue\n");
             buff = mute_buff;
-            count = sizeof(mute_buff) / (sizeof(int32_t) * 2);
+            count = sizeof(mute_buff) / sizeof(int32_t);
         }
         //printf("%d",length);
 
         uint32_t bs;
-        for(uint32_t i = 0; i<count; i=i+32){
-        	//32bitをかたまりにできればいい
-        	bs = 0;
-        	for(uint32_t j=0; j<32; j++){
-        	    //printf("buff[%d] = %d\n" , i+j,buff[i+j]);
-        	    bs = bs + buff[i+j];
-        	}
+        uint32_t buff_ct = 0;
+
+        for(uint32_t i = 0; i<count; i++){
+            int32_t d0 = buff[buff_ct++];
+        	if(d0 == 1){bs = 0x80000000;}
+            else {bs = 0x00000000;}
+
         	//printf("bs_No.%d = %d\n",(i/32),bs);
 //            gpio_put(PIN_PIOT_MEASURE, 1);              // テスト用 pio設定前にH。pioに待たされている時刻測定用
 
