@@ -24,9 +24,10 @@ void file_read() {
     FATFS fs;
     FIL fil;
     int ret;
-    char buf[100];
+    char buf[3072];
     char *ptr;
     char filename[] = "check_500Hz_3072000Fs_10s.dat";
+    //char filename[] = "check_500Hz_3072000Fs_10s.dat";
 
     // Wait for user to press 'enter' to continue
     printf("\r\nSD card test. Press 'enter' to start.\r\n");
@@ -96,17 +97,30 @@ void file_read() {
     // Print every line in file over serial
     printf("Reading from file '%s':\r\n", filename);
     printf("---\r\n");
-    while (f_gets(buf, sizeof(buf), &fil)) {
-        //uint32_t data[sizeof(buf)];
-        uint32_t *data;
-        for(uint32_t i=0;i<sizeof(buf);i++){
-            data[i] = parseint(buf[i]);
-            //printf("%d",data[i]);
+    while(1){
+        printf("length = %d\n",get_length());
+        if (get_length() > 15){
+            multicore_launch_core1(output);
+            continue;
         }
-        //printf("%d",data);
-        enqueue(data,sizeof(buf));
-        printf("start multicore1\n");
-        multicore_launch_core1(output);
+        else {
+            while (f_gets(buf, sizeof(buf), &fil)) {
+                uint32_t data[sizeof(buf)];
+                bool data_bool[sizeof(buf)];
+                //uint32_t *data;
+                for(uint32_t i=0;i<sizeof(buf);i++){
+                    data[i] = parseint(buf[i]);
+                    if(data[i] == 1 ){ data_bool[i] = true;}
+                    else { data_bool[i] = false;}
+                    printf("data[%d] = %d\n",i,data_bool[i]);
+                }
+                //printf("%d",data);
+                enqueue(data_bool,sizeof(buf));
+                //printf("start multicore1\n");
+                //multicore_launch_core1(output);
+                break;
+            }
+        }
     }
     printf("\r\n---\r\n");
 

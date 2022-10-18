@@ -12,6 +12,7 @@
 #define OSR_BSFT        6               // BitShift equivalent of Over Sampling Rate , log2(OSR)
 #define DS_DC_OFFSET    (0x07ff << OSR_BSFT)    // Delta-Sigma DC offset for idle tone reduction
 #define OFS             (FS * OSR)      // Output/Over Sampling Frequency[Hz]
+//#define OFS             5644800      // Output/Over Sampling Frequency[Hz]
 #define N_CH            1               // Number of Audio Channel
 #define OS_ORDER        2               // OverSampler次数 0:0次ホールド 1:直線補間 2:二次曲線補間
 #define DE_SINC3        1               // OverSampler補正(逆SINC3)フィルタ 0:無効 1:有効
@@ -88,9 +89,9 @@ void output(){
     }
 
 	static bool mute_flag = false;
-    static uint32_t mute_buff[768] = {0};  // 無音buff 3072/4でよさそう？
+    static bool mute_buff[768] = {false};  // 無音buff 3072/4でよさそう？
     uint32_t count;
-    uint32_t* buff; //buffのポインタを宣言するのでbuffそのものを呼び出しているわけではない
+    bool* buff; //buffのポインタを宣言するのでbuffそのものを呼び出しているわけではない
     
     while(1){
         //printf("Now is in while\n");
@@ -98,32 +99,33 @@ void output(){
     	
     	if((length == 0)&&(mute_flag ==false))              // mute開始条件段数
         {
-            //printf("flag is mute\n");
+            printf("flag is mute\n");
             mute_flag = true;
         } 
-        else if(length >= 5)            // mute解除条件段数
+        else if(length >= 15)            // mute解除条件段数
         {
-            //printf("flag is on\n");
+            printf("flag is on\n");
             mute_flag = false;
         }
 
         if(mute_flag||(dequeue(&buff, &count) == false))    // mute状態もしくはdequeue失敗ならmute_bufferに切り替え
         {
-            //printf("flag is mute due to fail dequeue\n");
+            printf("flag is mute due to fail dequeue\n");
             buff = mute_buff;
-            count = sizeof(mute_buff) / sizeof(int32_t);
+            count = sizeof(mute_buff);
         }
         //printf("%d",length);
 
         uint32_t bs;
         uint32_t buff_ct = 0;
-
+        printf("count = %d\n",count);
         for(uint32_t i = 0; i<count; i++){
-            int32_t d0 = buff[buff_ct++];
-        	if(d0 == 1){bs = 0x80000000;}
+            bool d0 = buff[buff_ct++];
+            //printf("d0 = %d\n",d0);
+        	if(d0 == true){bs = 0x7fffffff;}
             else {bs = 0x00000000;}
 
-        	//printf("bs_No.%d = %d\n",(i/32),bs);
+        	printf("bs[%d] = %d\n",i,bs);
 //            gpio_put(PIN_PIOT_MEASURE, 1);              // テスト用 pio設定前にH。pioに待たされている時刻測定用
 
             pio_sm_put_blocking(pio0, 0, bs);  //　set L-Ch 31:00 data to pio0,sm0(LSB First)
