@@ -97,7 +97,7 @@ void output(){
         //printf("Now is in while\n");
     	uint32_t length = get_length();
     	
-    	if((length == 0)&&(mute_flag ==false))              // mute開始条件段数
+    	if((length < 5)&&(mute_flag ==false))              // mute開始条件段数
         {
             printf("flag is mute\n");
             mute_flag = true;
@@ -106,9 +106,11 @@ void output(){
         {
             printf("flag is on\n");
             mute_flag = false;
+            printf("mute flag = %d\n",mute_flag);
         }
-
+        printf("check point1\n");
         if(mute_flag||(dequeue(&buff, &count) == false))    // mute状態もしくはdequeue失敗ならmute_bufferに切り替え
+        
         {
             printf("flag is mute due to fail dequeue\n");
             buff = mute_buff;
@@ -125,9 +127,9 @@ void output(){
         	if(d0 == true){bs = 0x7fffffff;}
             else {bs = 0x00000000;}
 
-        	printf("bs[%d] = %d\n",i,bs);
+        	//printf("bs[%d] = %d\n",i,bs);
 //            gpio_put(PIN_PIOT_MEASURE, 1);              // テスト用 pio設定前にH。pioに待たされている時刻測定用
-
+            //sem_release(&sem);
             pio_sm_put_blocking(pio0, 0, bs);  //　set L-Ch 31:00 data to pio0,sm0(LSB First)
             //pio_sm_put_blocking(pio0, 1, bs);  //　set R-Ch 31:00 data to pio0,sm1(LSB First) 
             //pio_sm_put_blocking(pio0, 0, ch[0].bs[1]);  //　set L-Ch 63:32 data to pio0,sm0

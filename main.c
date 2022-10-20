@@ -12,7 +12,7 @@
 #include "output.pio.h"
 #include "pins.h"
 
-static semaphore_t buffout_initted;
+//static semaphore_t sem;
 
 char parseint(char str){
 	return str - '0';
@@ -99,28 +99,28 @@ void file_read() {
     printf("---\r\n");
     while(1){
         printf("length = %d\n",get_length());
-        if (get_length() > 15){
+        if(get_length() > 15){
+            //sem_acquire_blocking(&sem);
             multicore_launch_core1(output);
-            continue;
+            break;
         }
-        else {
-            while (f_gets(buf, sizeof(buf), &fil)) {
-                uint32_t data[sizeof(buf)];
-                bool data_bool[sizeof(buf)];
-                //uint32_t *data;
-                for(uint32_t i=0;i<sizeof(buf);i++){
-                    data[i] = parseint(buf[i]);
-                    if(data[i] == 1 ){ data_bool[i] = true;}
-                    else { data_bool[i] = false;}
-                    printf("data[%d] = %d\n",i,data_bool[i]);
-                }
-                //printf("%d",data);
-                enqueue(data_bool,sizeof(buf));
-                //printf("start multicore1\n");
-                //multicore_launch_core1(output);
-                break;
+        else{
+            //sem_release(&sem);
+        }
+        while (f_gets(buf, sizeof(buf), &fil)) {
+            uint32_t data[sizeof(buf)];
+            bool data_bool[sizeof(buf)];
+            //uint32_t *data;
+            for(uint32_t i=0;i<sizeof(buf);i++){
+                data[i] = parseint(buf[i]);
+                if(data[i] == 1 ){ data_bool[i] = true;}
+                else { data_bool[i] = false;}
+                //printf("data[%d] = %d\n",i,data_bool[i]);
             }
-        }
+            //printf("%d",data);
+            enqueue(data_bool,sizeof(buf));
+            break;
+            }
     }
     printf("\r\n---\r\n");
 
@@ -154,9 +154,10 @@ int main(){
     // Initialize chosen serial port
     stdio_init_all();
     queue_init();
-    //sem_init(&buffout_initted, 0, 1);
-    //sem_acquire_blocking(&buffout_initted);
+    //sem_init(&sem, 1, 1);
     file_read();
     //printf("start multicore1\n");
+    //sem_release(&sem);
     //multicore_launch_core1(output);
+
 }
