@@ -2,7 +2,7 @@
 #define _PDM_OUTPUT_H_
 
 void output();
-static semaphore_t sem;
+//static semaphore_t sem;
 
 #endif
 

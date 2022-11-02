@@ -98,15 +98,11 @@ void file_read() {
     printf("Reading from file '%s':\r\n", filename);
     printf("---\r\n");
     while(1){
-        printf("length = %d\n",get_length());
-        if(get_length() > 15){
+        /*if(get_length() > 15){
             //sem_acquire_blocking(&sem);
-            multicore_launch_core1(output);
+            //multicore_launch_core1(output);
             break;
-        }
-        else{
-            //sem_release(&sem);
-        }
+        }*/
         while (f_gets(buf, sizeof(buf), &fil)) {
             uint32_t data[sizeof(buf)];
             bool data_bool[sizeof(buf)];
@@ -119,7 +115,10 @@ void file_read() {
             }
             //printf("%d",data);
             enqueue(data_bool,sizeof(buf));
-            break;
+            //printf("length = %d\n",get_length());
+            //printf("start multicore\n");
+            //multicore_launch_core1(output);
+            //break;
             }
     }
     printf("\r\n---\r\n");
@@ -155,9 +154,10 @@ int main(){
     stdio_init_all();
     queue_init();
     //sem_init(&sem, 1, 1);
+    //printf("begin file_read from main\n");
     file_read();
     //printf("start multicore1\n");
     //sem_release(&sem);
-    //multicore_launch_core1(output);
+    multicore_launch_core1(output);
 
 }

@@ -94,33 +94,35 @@ void output(){
     bool* buff; //buffのポインタを宣言するのでbuffそのものを呼び出しているわけではない
     
     while(1){
-        //printf("Now is in while\n");
+        //printf("Now is in output.c\n");
     	uint32_t length = get_length();
     	
     	if((length < 5)&&(mute_flag ==false))              // mute開始条件段数
         {
-            printf("flag is mute\n");
+            //printf("flag is mute\n");
             mute_flag = true;
+            //break;
         } 
         else if(length >= 15)            // mute解除条件段数
         {
-            printf("flag is on\n");
+            //printf("flag is on\n");
             mute_flag = false;
-            printf("mute flag = %d\n",mute_flag);
+            //printf("mute flag = %d\n",mute_flag);
         }
-        printf("check point1\n");
+        //printf("check point1\n");
         if(mute_flag||(dequeue(&buff, &count) == false))    // mute状態もしくはdequeue失敗ならmute_bufferに切り替え
-        
+
         {
-            printf("flag is mute due to fail dequeue\n");
+            //printf("flag is mute due to fail dequeue\n");
             buff = mute_buff;
             count = sizeof(mute_buff);
+            //break;
         }
         //printf("%d",length);
 
         uint32_t bs;
         uint32_t buff_ct = 0;
-        printf("count = %d\n",count);
+        //printf("count = %d\n",count);
         for(uint32_t i = 0; i<count; i++){
             bool d0 = buff[buff_ct++];
             //printf("d0 = %d\n",d0);
@@ -137,6 +139,7 @@ void output(){
 
 //          gpio_put(PIN_PIOT_MEASURE, 0);              // テスト用 pio設定後にL。pioに待たされている時刻測定用
         }
+        //break;
         //sem_release(&buffout_initted);
     }
 }

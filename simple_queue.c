@@ -46,7 +46,7 @@ bool dequeue(bool** buff, uint32_t* cnt)
         data_size--;
         spin_unlock(queue_spin_lock, save);
         ret = true;
-        printf("dequeue now\n");
+        //printf("dequeue now\n");
     }
 
     return ret;
@@ -59,19 +59,19 @@ bool enqueue(bool* buff, uint32_t cnt)
 {
     bool ret = false;
     if (get_length() < QUEUE_SIZE){
+        //printf("enqueue now\n");
         for(uint i=0; i<cnt*1; i++)                           // buffの内容をenqueueバッファにコピー
         {
            audio_buffer[enqueue_pos][i] = (bool)(buff[i]);
            //printf("audio_buffer[%d]=%d\n",i,buff[i]);
         }
         audio_buffer_len[enqueue_pos] = cnt;
-        printf("audio_buffer_len[%d] = %d\n",enqueue_pos,audio_buffer_len[enqueue_pos]);
+        //printf("audio_buffer_len[%d] = %d\n",enqueue_pos,audio_buffer_len[enqueue_pos]);
         enqueue_pos = (enqueue_pos + 1) % QUEUE_SIZE;
         uint32_t save = spin_lock_blocking(queue_spin_lock);
         data_size++;
         spin_unlock(queue_spin_lock, save);
         ret = true;
-        printf("enqueue now\n");
     }
     return ret;
 }
