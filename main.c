@@ -9,26 +9,25 @@
 //#include "hardware/pio.h"
 //#include "hardware/sync.h"
 //#include "hardware/pll.h"
-#include "output.pio.h"
+#include "pdm_output.pio.h"
 #include "pins.h"
 
+FRESULT fr;
+FATFS fs;
+FIL fil;
+int ret;
+char buf[3072];
+char *ptr;
+char filename[] = "check_500Hz_3072000Fs_10s.dat";
+bool eof = false;
+//char filename[] = "check_500Hz_3072000Fs_10s.dat";
 //static semaphore_t sem;
 
 char parseint(char str){
 	return str - '0';
 }
 
-void file_read() {
-
-    FRESULT fr;
-    FATFS fs;
-    FIL fil;
-    int ret;
-    char buf[3072];
-    char *ptr;
-    char filename[] = "check_500Hz_3072000Fs_10s.dat";
-    //char filename[] = "check_500Hz_3072000Fs_10s.dat";
-
+void sd_card_init(){
     // Wait for user to press 'enter' to continue
     printf("\r\nSD card test. Press 'enter' to start.\r\n");
     while (true) {
@@ -95,44 +94,37 @@ void file_read() {
     }
 
     // Print every line in file over serial
-    printf("Reading from file '%s':\r\n", filename);
-    printf("---\r\n");
-    while(1){
+}
+
+void file_read() {
+    //printf("Reading from file '%s':\r\n", filename);
+    //printf("---\r\n");
+    //while(1){
         /*if(get_length() > 15){
             //sem_acquire_blocking(&sem);
             //multicore_launch_core1(output);
             break;
         }*/
-        while (f_gets(buf, sizeof(buf), &fil)) {
-            uint32_t data[sizeof(buf)];
-            bool data_bool[sizeof(buf)];
-            //uint32_t *data;
-            for(uint32_t i=0;i<sizeof(buf);i++){
-                data[i] = parseint(buf[i]);
-                if(data[i] == 1 ){ data_bool[i] = true;}
-                else { data_bool[i] = false;}
-                //printf("data[%d] = %d\n",i,data_bool[i]);
-            }
-            //printf("%d",data);
-            enqueue(data_bool,sizeof(buf));
-            //printf("length = %d\n",get_length());
-            //printf("start multicore\n");
-            //multicore_launch_core1(output);
-            //break;
-            }
-    }
-    printf("\r\n---\r\n");
-
-    // Close file
-    fr = f_close(&fil);
-    if (fr != FR_OK) {
-        printf("ERROR: Could not close file (%d)\r\n", fr);
-        while (true);
-    }
-
-    // Unmount drive
-    f_unmount("0:");
-
+        f_gets(buf, sizeof(buf), &fil);
+        printf("file point is %d\n",fil.fptr);
+        uint32_t data[sizeof(buf)];
+        bool data_bool[sizeof(buf)];
+        //uint32_t *data;
+        for(uint32_t i=0;i<sizeof(buf);i++){
+            if(buf[i]=='\0') eof = true;
+            data[i] = parseint(buf[i]);
+            if(data[i] == 1 ){ data_bool[i] = true;}
+            else { data_bool[i] = false;}
+            //printf("data[%d] = %d\n",i,data_bool[i]);
+        }
+        //printf("%d",data);
+        enqueue(data_bool,sizeof(buf));
+        //printf("length = %d\n",get_length());
+        //printf("start multicore\n");
+        //multicore_launch_core1(output);
+        //break;
+    //}
+    //printf("\r\n---\r\n");
     /*
     // Loop forever doing nothing
     while (true) {
@@ -153,11 +145,24 @@ int main(){
     // Initialize chosen serial port
     stdio_init_all();
     queue_init();
+    sd_card_init();
     //sem_init(&sem, 1, 1);
     //printf("begin file_read from main\n");
-    file_read();
-    //printf("start multicore1\n");
-    //sem_release(&sem);
-    multicore_launch_core1(output);
+    while(eof == false){
+        printf("file read start\n");
+        file_read();
+        printf("start multicore1\n");
+        //sem_release(&sem);
+        multicore_launch_core1(output);
+    }
+    // Close file
+    fr = f_close(&fil);
+    if (fr != FR_OK) {
+        printf("ERROR: Could not close file (%d)\r\n", fr);
+        while (true);
+    }
+
+    // Unmount drive
+    f_unmount("0:");
 
 }
