@@ -1107,15 +1107,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sd_fat_spi::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sd_fat_spi-Debug-f0af9069be8305646121.json",
+					"jsonFile" : "target-sd_fat_spi-Debug-ebdd198377ea3605297c.json",
 					"name" : "sd_fat_spi",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "sd_fat_spi_output_pio_h::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sd_fat_spi_output_pio_h-Debug-4a5e6bd664ab07a62484.json",
-					"name" : "sd_fat_spi_output_pio_h",
+					"id" : "sd_fat_spi_pdm_output_pio_h::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sd_fat_spi_pdm_output_pio_h-Debug-d31229f44c6c26186d72.json",
+					"name" : "sd_fat_spi_pdm_output_pio_h",
 					"projectIndex" : 0
 				}
 			]

@@ -4,7 +4,7 @@
 #include "simple_queue.h"
 #include "pico/multicore.h"
 #include "main.h"
-#include "output.pio.h"
+#include "pdm_output.pio.h"
 #include "pins.h"
 
 #define FS              48000           // Source Sampling Frequency[Hz]

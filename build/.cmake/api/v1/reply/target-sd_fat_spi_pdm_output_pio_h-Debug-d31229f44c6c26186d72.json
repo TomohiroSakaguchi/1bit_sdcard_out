@@ -64,8 +64,8 @@
 			"id" : "PioasmBuild::@29db30da11e86cddb3e0"
 		}
 	],
-	"id" : "sd_fat_spi_output_pio_h::@6890427a1f51a3e7e1df",
-	"name" : "sd_fat_spi_output_pio_h",
+	"id" : "sd_fat_spi_pdm_output_pio_h::@6890427a1f51a3e7e1df",
+	"name" : "sd_fat_spi_pdm_output_pio_h",
 	"paths" : 
 	{
 		"build" : ".",
@@ -94,19 +94,19 @@
 		{
 			"backtrace" : 2,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/sd_fat_spi_output_pio_h",
+			"path" : "build/CMakeFiles/sd_fat_spi_pdm_output_pio_h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/sd_fat_spi_output_pio_h.rule",
+			"path" : "build/CMakeFiles/sd_fat_spi_pdm_output_pio_h.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/output.pio.h.rule",
+			"path" : "build/pdm_output.pio.h.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

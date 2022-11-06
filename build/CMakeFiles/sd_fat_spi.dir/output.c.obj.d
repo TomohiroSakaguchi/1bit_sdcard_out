@@ -68,7 +68,7 @@ CMakeFiles/sd_fat_spi.dir/output.c.obj: \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
  /Users/remon/pico/1bit_sdcard_out/main.h \
- /Users/remon/pico/1bit_sdcard_out/build/output.pio.h \
+ /Users/remon/pico/1bit_sdcard_out/build/pdm_output.pio.h \
  /Users/remon/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
  /Users/remon/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
